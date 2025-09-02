@@ -43,7 +43,7 @@ void process_all_employees()
     // read id, name, dept, salary line by line and call process_employee function with required arguments
 
     // close employees.txt file
-    fclose(empFile);
+
 }
 
 int main()

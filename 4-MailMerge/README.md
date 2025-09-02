@@ -2,7 +2,7 @@
 
 ### Problem Description
 
-A company wants to automatically generate **Employee Payslips** using a template file.
+A company wants to automatically generate **Employee Payslips** using a template file. You have:
 
 1. An input file `employees.txt` contains employee details in the following format:
 
