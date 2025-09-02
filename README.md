@@ -21,6 +21,7 @@ Here are the main parts you should know:
    - You will mostly use the **Explorer** to open your lab files.
 
    <!-- ![alt text](explorer.png) -->
+   ![alt text](image-4.png)
 
 2. **Explorer Panel**  
    - Shows all the files and folders in your lab repository.  
@@ -29,17 +30,20 @@ Here are the main parts you should know:
    - If you don't see the Explorer panel, click on the Explorer tab in Activity Bar.
 
    <!-- ![alt text](files.png) -->
+   ![alt text](image-6.png)
 
 3. **Editor Area (Center)**  
    - This is where your code files open.  
    - You can open multiple files in tabs, similar to a browser.
 
    <!-- ![alt text](editor.png) -->
+   ![alt text](image-5.png)
 
 4. **Terminal (Bottom Panel)**  
    - Use this to compile and run your C programs.  
    - Open/close it by clicking **View > Terminal** or pressing <kbd>Ctrl</kbd> + <kbd>`</kbd> (backtick).  
 
+    ![alt text](image-7.png)
    Example commands:
    ```bash
    gcc lab1.c -o lab1
