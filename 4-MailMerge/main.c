@@ -25,7 +25,7 @@ void process_employee(const char *id, const char *name, const char *dept, const 
 
     // Open template file
 
-    // Read template line by line
+    // Read template line by line and feed it to replace_placeholder function
     while (fgets(template_line, sizeof(template_line), templateFile))
     {
     }
@@ -37,7 +37,6 @@ void process_employee(const char *id, const char *name, const char *dept, const 
 void process_all_employees()
 {
     // use open_file function to open employees.txt in read mode
-    FILE *empFile = open_file("employees.txt", "r");
     char id[20], name[50], dept[50], salary[20];
 
     // read id, name, dept, salary line by line and call process_employee function with required arguments
