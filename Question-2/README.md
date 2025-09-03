@@ -13,19 +13,19 @@ Each patient has the following details:
 Your system should allow the following operations:
 
 `Add New Patients`:
-You should be able to add new patients to the hospital system by providing details such as the Patient ID, Name, Age, and Disease.
+You should be able to add new patients to the hospital system by providing details such as the Patient ID, Name, Age, and Disease. If the number of patients reached `MAX`, then print as `Limit has reached`.
 
 `Display All Patients`:
 You should be able to display a list of all currently admitted patients, showing their ID, name, age, and disease.
 
 `Search a Patient by Name`:
-You should be able to search for a patient using their name and display their details (if found).
+You should be able to search for a patient using their ID and display their details (if found), otherwise show as `Enter the correct ID`
 
 `Update Disease Information`:
 The system should allow you to update the disease or condition for a specific patient by providing their Patient ID.
 
 `Discharge a Patient`:
-When a patient is discharged from the hospital, they should be removed from the list of current patients.
+When a patient is discharged from the hospital, they should be removed from the list of current patients. If the patient ID is not found, show as `Enter the correct ID`, as well as if the patient list is empty and tried to discharge mention as `Nobody is there to discharge`
 
 ## Requirements
 
@@ -76,7 +76,7 @@ Display appropriate outputs for each operation such as:
 John
 35
 Flu
-5
+6
 
 ```
 
