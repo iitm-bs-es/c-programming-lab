@@ -54,4 +54,12 @@ This will give us an interactive prompt where we can type further commands.  Som
 
 ## Assignment
 
-Two examples of debugging are discussed in class.  You need to debug the other two and show them to the TAs.
+You need to debug one problem and show them to the TAs.
+
+## Evaluation
+
+1. Demonstrate use of break statement
+2. Demonstrate use of watcher
+3. Demonstrate use of continue and next statement
+4. Demonstrate running and navigating gdb interface
+5. Fix the bug in at least 1 problem

@@ -99,3 +99,12 @@ Patient added successfully.
 Enter your choice: 6
 Exiting the system.
 ```
+
+## Evaluation:
+
+1. Complete the patient struct complete
+2. Add patient functionality
+3. Display patient functionality
+4. Search patient functionality
+5. Update disease functionality
+6. Discharge patient functionality
