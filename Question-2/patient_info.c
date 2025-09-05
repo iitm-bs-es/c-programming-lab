@@ -20,7 +20,7 @@ void displayPatients() {
     
 }
 
-// Function to search for a patient by name
+// Function to search for a patient by ID
 void searchPatientByName() {
     
 }
@@ -61,3 +61,4 @@ int main() {
 
     return 0;
 }
+
