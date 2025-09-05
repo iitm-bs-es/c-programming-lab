@@ -21,7 +21,7 @@ void displayPatients() {
 }
 
 // Function to search for a patient by ID
-void searchPatientByName() {
+void searchPatientByID() {
     
 }
 
@@ -51,7 +51,7 @@ int main() {
         switch (choice) {
             case 1: addPatient(); break;
             case 2: displayPatients(); break;
-            case 3: searchPatientByName(); break;
+            case 3: searchPatientByID(); break;
             case 4: updateDisease(); break;
             case 5: dischargePatient(); break;
             case 6: printf("Exiting the system.\n"); return 0;
@@ -61,4 +61,5 @@ int main() {
 
     return 0;
 }
+
 
