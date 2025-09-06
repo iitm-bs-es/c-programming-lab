@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// count the number of primes between l and m.
 int isPrime(int n){
 	int i = 2;
 	for (; i < sqrt(n); i++) { 

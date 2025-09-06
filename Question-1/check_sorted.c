@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// check if an array is sorted
 int check_sorted(int arr, int n){
     int is_sorted = 1;
     for (int i=0; i<n; i++){ 

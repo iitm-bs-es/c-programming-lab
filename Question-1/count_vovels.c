@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+// count the number of vowels in a input string
 int count_vowels(char* str) {
     int count = 0;
     int n = strlen(str);
