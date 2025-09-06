@@ -124,5 +124,7 @@ A company wants to automatically generate **Employee Payslips** using a template
 
 - Navigate to question in the terminal
 `cd /workspaces/c-programming-lab/Question-4/`
-- Run the code using make
+- compile the code using make
 `make`
+- run the code
+`./payslip`
