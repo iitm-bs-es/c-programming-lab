@@ -56,6 +56,28 @@ This will give us an interactive prompt where we can type further commands.  Som
 
 You need to debug one problem and show them to the TAs.
 
+## Instruction
+
+- Navigate to question in the terminal
+`cd /workspace/Question-1`
+
+- Compile the code
+`gcc -g <file_name> -o <output_name>`
+
+- Run the code directly
+`./<output_name>`
+
+- Run the code in gdb to debug
+`gdb <output_name>`
+
+- 
+
+## Help
+
+- Terminal is stuck
+    - ctrl + c (windows), cmd + c (mac) to close the stuck terminal
+
+
 ## Evaluation
 
 1. Demonstrate use of break statement

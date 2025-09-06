@@ -53,6 +53,7 @@ A company wants to automatically generate **Employee Payslips** using a template
 
 - All the code needs to be written in `main.c`.
 - You need to use functions from `helper.h`
+- use command `make` to run the code.
 
 ## Sample Output
 
@@ -116,6 +117,5 @@ A company wants to automatically generate **Employee Payslips** using a template
 5. Implement process_employee to generate payslip files.
 6. Implement process_all_employees to read employees.txt and call process_employee.
 7. Use helpers.c/h functions appropriately.
-8. Provide a working Makefile to build the program.
-9. Generate one payslip per employee in correct format.
-10. Print final confirmation message on success.
+8. Generate one payslip per employee in correct format.
+9. Print final confirmation message on success.
