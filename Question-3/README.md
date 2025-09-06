@@ -69,3 +69,12 @@ The input consists of 5 lines.
    * Final Count of Flags ON
    * Correctly counts the number of 1s in the final configuration.
    * Prints the count.
+
+# Help
+
+- Navigate to question in the terminal
+`cd /workspaces/c-programming-lab/Question-3/`
+- Compile the code
+`gcc main.c -o main`
+- Run the code
+`./main`

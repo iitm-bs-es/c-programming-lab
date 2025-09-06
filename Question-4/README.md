@@ -119,3 +119,10 @@ A company wants to automatically generate **Employee Payslips** using a template
 7. Use helpers.c/h functions appropriately.
 8. Generate one payslip per employee in correct format.
 9. Print final confirmation message on success.
+
+## Help
+
+- Navigate to question in the terminal
+`cd /workspaces/c-programming-lab/Question-4/`
+- Run the code using make
+`make`

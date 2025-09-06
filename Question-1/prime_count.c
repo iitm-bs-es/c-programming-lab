@@ -21,6 +21,6 @@ int countPrime(int l, int h){
 int main(){
 	int l, h;
 	scanf("%d%d", &l, &h);
-	printf("%d", countPrime(l, h));
+	printf("%d\n", countPrime(l, h));
 	return 0;
 }

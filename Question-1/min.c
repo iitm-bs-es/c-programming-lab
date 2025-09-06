@@ -10,6 +10,6 @@ int findMin(int arr[], int n){
 }
 int main(){
 	int a[] = {10, 5, 7, 1, 20, -2};
-	printf("%d", findMin(a, 5));
+	printf("%d\n", findMin(a, 5));
 	return 0;
 }

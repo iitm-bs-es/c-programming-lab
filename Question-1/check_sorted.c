@@ -18,5 +18,5 @@ int main(){
         scanf("%d", &a[i]);
     }
     int result = check_sorted(a, n);
-    printf("%s", result ? 'Sorted' : 'Not Sorted');
+    printf("%s\n", result ? 'Sorted' : 'Not Sorted');
 }

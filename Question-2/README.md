@@ -108,3 +108,12 @@ Exiting the system.
 4. Search patient functionality
 5. Update disease functionality
 6. Discharge patient functionality
+
+## Help
+
+- Navigate to the question in the terminal
+`cd /workspaces/c-programming-lab/Question-2/`
+- compile the code
+`gcc patient_info.c -o patient`
+- run the code
+`./patient`

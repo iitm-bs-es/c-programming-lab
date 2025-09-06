@@ -24,5 +24,5 @@ int main() {
     scanf("%s", s);
     
     int result = count_vowels(s);
-    printf("Number of vowels: %d", result);
+    printf("Number of vowels: %d\n", result);
 }

@@ -59,7 +59,7 @@ You need to debug one problem and show them to the TAs.
 ## Instruction
 
 - Navigate to question in the terminal
-`cd /workspace/Question-1`
+`cd /workspaces/c-programming-lab/Question-1/`
 
 - Compile the code
 `gcc -g <file_name> -o <output_name>`
