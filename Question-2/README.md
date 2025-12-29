@@ -1,119 +1,74 @@
-You are tasked with developing a small **patient management system** for a hospital. The hospital needs to store, manage, and update the records of its patients efficiently. To accomplish this, you need to create a system that stores and displays information about the patients admitted to the hospital.
+# Matrix Multiplication
 
-Each patient has the following details:
+The goal of this project is to perform matrix multiplication on the matrix that are read from files and save the result in another file.
 
-- `Patient ID`: A unique identifier for each patient (integer).
+## Generating Matrix files
 
-- `Name`: The full name of the patient (string).
-
-- `Age`: The age of the patient (integer).
-
-- `Disease`: The disease or condition the patient is being treated for (string).
-
-Your system should allow the following operations:
-
-`Add New Patients`:
-You should be able to add new patients to the hospital system by providing details such as the Patient ID, Name, Age, and Disease. If the number of patients reached `MAX`, then print as `Limit has reached`.
-
-`Display All Patients`:
-You should be able to display a list of all currently admitted patients, showing their ID, name, age, and disease.
-
-`Search a Patient by Name`:
-You should be able to search for a patient using their ID and display their details (if found), otherwise show as `Enter the correct ID`
-
-`Update Disease Information`:
-The system should allow you to update the disease or condition for a specific patient by providing their Patient ID.
-
-`Discharge a Patient`:
-When a patient is discharged from the hospital, they should be removed from the list of current patients. If the patient ID is not found, show as `Enter the correct ID`, as well as if the patient list is empty and tried to discharge mention as `Nobody is there to discharge`
-
-## Requirements
-
-Define a structure `Patient` with the following fields:
-
--   patientID (integer)
-
--   name (string)
-
--   age (integer)
-
--   disease (string)
-
-Implement the following functionalities:
-
--   Input and display patient details.
-
--   Implement functions to add, update, and remove patients.
-
--   Implement a function to search for a patient by name.
-
--   Ensure that patients can be uniquely identified by their ID for update and discharge operations.
-
-**Input Format**
-
-First line consists of an integer n denoting the number of patients to add initially.
-
-Next n lines contains Patient ID, Name, Age, and Disease.
-
-**Output Format**
-
-Display appropriate outputs for each operation such as:
-
--   Successful addition confirmation
-
--   List of patients
-
--   Search results
-
--   Update confirmations
-
--   Discharge confirmations
-
-**Sample Input**
-```
-1
-101
-John
-35
-Flu
-6
+In the terminal move to the directory `p1-matmul` using the following command.
 
 ```
-
-**Sample Ouptut**
-```
-1. Add a Patient
-2. Display All Patients
-3. Search Patient by Name
-4. Update Disease Information
-5. Discharge a Patient
-6. Exit
-
-Enter your choice: 1
-Enter Patient ID: 101
-Enter Patient Name: John Doe
-Enter Patient Age: 35
-Enter Patient Disease: Flu
-Patient added successfully.
-
-Enter your choice: 6
-Exiting the system.
+cd p1-matmul
 ```
 
-## Evaluation:
+The `genmat.py` file in this directory is used to generate random matrices using a python library called numpy (which is actually written in c).
 
-1. Complete the patient struct complete
-2. Add patient functionality
-3. Display patient functionality
-4. Search patient functionality
-5. Update disease functionality
-6. Discharge patient functionality
+Run the python program `genmat.py` according to the python installation in your stystem.
 
-## Help
+```
+python genmat.py DIM
+```
 
-- Navigate to the question in the terminal
-`cd /workspaces/c-programming-lab/Question-2/`
-- compile the code
-`gcc patient_info.c -o patient`
-- run the code
-`./patient`
+or
+
+```
+python3 genmat.py DIM
+```
+
+Where DIM is the dimensions of the square matrix.
+
+For the first trial use `DIM = 3`.
+
+This will generate the input matrix files `a.txt` and `b.txt` and the expected output matrix file `c.txt`.
+
+## Implmenting matix multiplication
+
+### Task 1
+
+Read and print the matrices `A` and `B` from the files `a.txt` and `b.txt` by implementing the below functions in the `matmul.c`.
+
+- `read_mat` - To read the matrix from the file.
+- `print_mat` - To print the matrix in the stdout.
+
+Compile and run program using the below commands from the terminal.
+
+```
+gcc matmul.c -o matmul
+./matmul
+```
+
+or in a single line as follows
+
+```
+gcc matmul.c -o matmul && ./matmul
+```
+
+### Task 2
+
+Perform matrix multiplication on `A` and `B` and store the result in `C` and measure the time taken to perform the matrix multiplication.
+
+Implement the function `matmul` in `matmul.c`
+
+Uncomment the Commented part in the `main` function of `matmul.c` and compile the code as mentioned above.
+
+### Task 2.1
+
+Use a different DIM with the `genmat.py` to matrcies of different size and compile the `matmul.c` with different dimension as follows.
+
+For example, DIM=5
+
+```
+python genmat.py 5
+gcc matmul.c -o matmul -D DIM=5
+```
+
+This will generate random matrices of dimensions 5x5 and compile the matmul.c with the DIM macro as 5.
