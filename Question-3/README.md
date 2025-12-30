@@ -22,7 +22,7 @@ All binary outputs must show 16 bits with leading zeros.
 
 ## Input Format
 
-Input consists of the following values (each on its own line, except the last line has two values):
+Provide the following values (each on its own line, except the last line has two values):
 
 1. Initial unsigned integer `n` (treated as 16-bit)
 2. Position `k_set`
@@ -31,11 +31,13 @@ Input consists of the following values (each on its own line, except the last li
 5. Position `k_check`
 6. Positions `i_swap` and `j_swap` (space-separated on one line)
 
-All positions are 1-indexed (`1` = LSB)
+All positions are 1-indexed (`1` = LSB). You may assume valid positions between 1 and 16.
 
 ---
 
 ## Output Format
+
+Print exactly these lines in order:
 
 1. `Initial:` followed by the 16-bit binary of `n`.
 2. `After set bit:` binary after setting `k_set`.
@@ -45,7 +47,7 @@ All positions are 1-indexed (`1` = LSB)
 6. `After swap bits:` binary after swapping `i_swap` and `j_swap`.
 7. `Total SET bits:` count of 1s in the final value.
 
-Output format has already been created, you need to completed all functions.
+Spacing should match the starter code labels for easy grading.
 
 ---
 
@@ -59,17 +61,18 @@ Output format has already been created, you need to completed all functions.
 - `isBitSet(unsigned int n, unsigned int k)` – return 1 if set, else 0.
 - `swapBits(unsigned int n, unsigned int i, unsigned int j)` – swap bits at `i` and `j`.
 
-Do not change `main`; implement the helpers. Work with 16-bit logic.
+Do not change `main`; implement the helpers. Work with 16-bit logic (masking higher bits is allowed but not required if you use shifts carefully).
 
 ---
 
 ## Evaluation
 
 - Correct binary formatting (16 bits, leading zeros) after each stage.
-- Each operation updates the value correctly before the next step.
-- Check message is accurate for `k_check`.
-- Final swap reflects both positions exchanged.
-- Final set-bit count matches the last binary output.
+- setBit() is implemented correctly.
+- clearBit() is implemented correctly.
+- toggleBit() is implemented correctly.
+- isBitSet() is implemented correctly.
+- swapBits() is implemented correctly.
 
 ---
 
