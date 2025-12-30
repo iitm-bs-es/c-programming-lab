@@ -1,80 +1,80 @@
-You are developing a **network security module** that processes a **16-bit security flag field** embedded in data packets. Each of the 16 bits represents whether a **specific rule** is enabled (`1`) or disabled (`0`):
-
-* Rule 1 corresponds to the **least significant bit (LSB)**.
-* Rule 16 corresponds to the **most significant bit (MSB)**.
-
-You are given the initial security configuration as an integer, and you need to apply a series of bitwise operations to sanitize and transform the flag field according to system rules.
+You are maintaining a **16-bit feature flag** field. Each bit controls whether a feature is enabled (`1`) or disabled (`0`). Bit position 1 is the **LSB**, bit position 16 is the **MSB**.
 
 ---
 
-Tasks:
+## Tasks
 
-1. **Clear all flags at perfect square positions** 
+1) **Set a bit** at position `k_set`.
 
-   * Positions: 1, 4, 9, 16
+2) **Clear a bit** at position `k_clear`.
 
-2. **Enable all flags at Fibonacci positions** 
+3) **Toggle a bit** at position `k_toggle`.
 
-   * Positions: 1, 2, 3, 5, 8, 13
+4) **Check a bit** at position `k_check` (report whether it is `SET` or `NOT SET`).
 
+5) **Swap two bit positions** `i_swap` and `j_swap` to remove bit-level bias.
 
-3. **Toggle user-specified bit positions** 
+6) **Print the final binary** configuration after every step and **count total set bits** at the end.
 
-   * User inputs positions between 1 and 16. Ends input with `-1`.
+All binary outputs must show 16 bits with leading zeros.
 
-4. **Print the final binary configuration** and **count how many flags are ON** 
+---
 
+## Input Format
 
-**Input Format**
+Input consists of the following values (each on its own line, except the last line has two values):
 
-The input consists of 2 lines.
+1. Initial unsigned integer `n` (treated as 16-bit)
+2. Position `k_set`
+3. Position `k_clear`
+4. Position `k_toggle`
+5. Position `k_check`
+6. Positions `i_swap` and `j_swap` (space-separated on one line)
 
--  The first line contains a positive integer n — the initial 16-bit flag field.
+All positions are 1-indexed (`1` = LSB)
 
--  The second line contains positions (1–16) to be toggled, ending with -1.
+---
 
-**Output Format**
+## Output Format
 
-The input consists of 5 lines.
+1. `Initial:` followed by the 16-bit binary of `n`.
+2. `After set bit:` binary after setting `k_set`.
+3. `After clear bit:` binary after clearing `k_clear`.
+4. `After toggle bit:` binary after toggling `k_toggle`.
+5. `Bit <k_check> is SET/NOT SET` based on the check result.
+6. `After swap bits:` binary after swapping `i_swap` and `j_swap`.
+7. `Total SET bits:` count of 1s in the final value.
 
--  The first line contains 16-bit binary representation of the initial flag field.
+Output format has already been created, you need to completed all functions.
 
--  The second line contains 16 bit binary representation after clearing perfect square positions.
+---
 
--  The third line contains 16 bit binary representation after enabling Fibonacci positions.
+## Functions to Implement (in `main.c`)
 
--  The fourth line contains 16 bit binary representation after toggling user-specified positions.
+- `printBinary(unsigned int n)` – print 16-bit binary with leading zeros.
+- `countSetBits(unsigned int n)` – return number of 1s.
+- `setBit(unsigned int n, unsigned int k)` – set position `k`.
+- `clearBit(unsigned int n, unsigned int k)` – clear position `k`.
+- `toggleBit(unsigned int n, unsigned int k)` – toggle position `k`.
+- `isBitSet(unsigned int n, unsigned int k)` – return 1 if set, else 0.
+- `swapBits(unsigned int n, unsigned int i, unsigned int j)` – swap bits at `i` and `j`.
 
--  The fifth line contains the total number of flags that are ON  in the final configuration.
+Do not change `main`; implement the helpers. Work with 16-bit logic.
 
-## Evaluation:
+---
 
-1. Print Initial Configuration
-   * Correctly prints the 16-bit binary representation of the given integer.
-   * Leading zeros must be shown.
+## Evaluation
 
-2. Clear Perfect Square Positions
-   * Correctly clears bits at positions 1, 4, 9, 16 (LSB = position 1).
-   * Prints the resulting 16-bit configuration.
+- Correct binary formatting (16 bits, leading zeros) after each stage.
+- Each operation updates the value correctly before the next step.
+- Check message is accurate for `k_check`.
+- Final swap reflects both positions exchanged.
+- Final set-bit count matches the last binary output.
 
-3. Enable Fibonacci Positions
-   * Correctly sets bits at positions 1, 2, 3, 5, 8, 13.
-   * Prints the updated 16-bit configuration.
+---
 
-4. Toggle User-Specified Positions
-   * Reads user input positions until -1.
-   * Correctly toggles those bits.
+## Help
 
-5. Prints the 16-bit binary configuration after toggling.
-   * Final Count of Flags ON
-   * Correctly counts the number of 1s in the final configuration.
-   * Prints the count.
-
-# Help
-
-- Navigate to question in the terminal
-`cd /workspaces/c-programming-lab/Question-3/`
-- Compile the code
-`gcc main.c -o main`
-- Run the code
-`./main`
+- Navigate: `cd /workspaces/c-programming-lab/Question-3/`
+- Compile: `gcc main.c -o main`
+- Run: `./main`
