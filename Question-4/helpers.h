@@ -1,12 +1,10 @@
 #ifndef HELPERS_H
 #define HELPERS_H
 
-// Function to replace placeholders in template
-void replace_placeholder(const char *template_line, char *output_line,
-                         const char *id, const char *name,
-                         const char *dept, const char *salary);
+#include <stdio.h>
 
-// Function to trim newline from strings
-void trim_newline(char *str);
+FILE* open_file(char filename[], char mode[]);
+void generate_output_filename(int id, char filename[]);
+void replace_placeholders(char line[], FILE *out, int id, char name[], char movie[], char seat[], int price);
 
 #endif

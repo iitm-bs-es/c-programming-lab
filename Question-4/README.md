@@ -1,130 +1,188 @@
-## Payslip
 
-### Problem Description
+# Movie Ticket Generator (Cinema Booking System)
 
-A company wants to automatically generate **Employee Payslips** using a template file. You have:
+## Problem Description
+A cinema wants to automatically generate movie tickets for customers using a template file.
 
-1. An input file `employees.txt` contains employee details in the following format:
+You are given:
 
-   ```
-    101 John Sales 50000
-    102 Alice HR 60000
-    103 Bob IT 55000
-   ```
+### 1. Input File: `bookings.txt`
+Each line contains:
 
-   Each line has:
+```text
+BookingID Name Movie Seat Price
+````
 
-   - Employee ID
-   - Employee Name
-   - Employee Department
-   - Basic Salary
+Example:
 
-2. A template file `template.txt` is provided, which contains placeholders:
+```text
+501 Arjun Inception A5 250
+502 Diya Avatar B2 300
+503 Rahul Interstellar C1 280
+```
 
-   ```
-    ------------------------------
-            PAYSLIP
-    ------------------------------
-    Employee ID   : {{id}}
-    Name          : {{name}}
-    Department    : {{dept}}
-    Salary        : {{salary}}
-    ------------------------------
-   ```
+Each booking contains:
 
-   > `{{id}}`, `{{name}}`, `{{dept}}`, and `{{salary}}` must be replaced with actual values.
+* Booking ID
+* Customer Name
+* Movie Name
+* Seat Number
+* Ticket Price
 
-3. The program should read `employees.txt`, and for each employee, generate a payslip file named:
+---
 
-   ```
-   payslip_<id>.txt
-   ```
+### 2. Template File: `template.txt`
 
-   Example: `payslip_101.txt` for John Doe.
+```text
+================================
+       MOVIE TICKET
+================================
+Booking ID : {{id}}
+Name       : {{name}}
+Movie      : {{movie}}
+Seat       : {{seat}}
+Price      : ₹{{price}}
+--------------------------------
+Enjoy your movie!
+================================
+```
 
-4. The solution must use:
+The placeholders:
 
-   - `helpers.c` and `helpers.h` functions
-   - A **Makefile** to compile and link the program
+* `{{id}}`
+* `{{name}}`
+* `{{movie}}`
+* `{{seat}}`
+* `{{price}}`
+
+must be replaced with actual booking details.
+
+---
+
+## Task
+
+For each booking in `bookings.txt`:
+
+1. Read booking details.
+2. Read template file line by line.
+3. Replace placeholders.
+4. Generate output file:
+
+```text
+ticket_<id>.txt
+```
+
+Example:
+
+```text
+ticket_501.txt
+```
 
 ---
 
 ## Instructions
 
-- All the code needs to be written in `main.c`.
-- You need to use functions from `helper.h`
-- use command `make` to run the code.
+* Write all logic inside `main.c`
+* Use functions from `helpers.h`
+* Use `Makefile` for compilation
 
-## Sample Output
+---
 
-- Input `employees.txt`:
+## Sample Output 
 
-  ```
-    101 John Sales 50000
-    102 Alice HR 60000
-    103 Bob IT 55000
-  ```
+- Input `bookings.txt`:
+
+'''text
+501 Arjun Inception A5 250
+502 Diya Avatar B2 300
+503 Rahul Interstellar C1 280
+'''
+
 
 - Output files:
 
-  - `payslip_101.txt`
+`ticket_501.txt`
 
-    ```
-    ------------------------------
-            PAYSLIP
-    ------------------------------
-    Employee ID   : 101
-    Name          : John
-    Department    : Sales
-    Salary        : 50000
-    ------------------------------
-    ```
+```text
+================================
+       MOVIE TICKET
+================================
+Booking ID : 501
+Name       : Arjun
+Movie      : Inception
+Seat       : A5
+Price      : ₹250
+--------------------------------
+Enjoy your movie!
+================================
+```
 
-  - `payslip_102.txt`
+`ticket_502.txt`
 
-    ```
-    ------------------------------
-            PAYSLIP
-    ------------------------------
-    Employee ID   : 102
-    Name          : Alice
-    Department    : HR
-    Salary        : 60000
-    ------------------------------
-    ```
+```text
+================================
+       MOVIE TICKET
+================================
+Booking ID : 502
+Name       : Diya
+Movie      : Avatar
+Seat       : B2
+Price      : ₹300
+--------------------------------
+Enjoy your movie!
+================================
+```
 
-  - `payslip_102.txt`
+`ticket_503.txt`
 
-    ```
-    ------------------------------
-            PAYSLIP
-    ------------------------------
-    Employee ID   : 103
-    Name          : Bob
-    Department    : IT
-    Salary        : 55000
-    ------------------------------
-    ```
+```text
+================================
+       MOVIE TICKET
+================================
+Booking ID : 503
+Name       : Rahul
+Movie      : Interstellar
+Seat       : C1
+Price      : ₹280
+--------------------------------
+Enjoy your movie!
+================================
+```
 
 ---
 
 ## Evaluation
 
-1. Implement open_file correctly with error handling.
-2. Implement generate_output_filename to create payslip_<id>.txt.
-3. Read template.txt line by line.
-4. Replace placeholders ({{id}}, {{name}}, {{dept}}, {{salary}}).
-5. Implement process_employee to generate payslip files.
-6. Implement process_all_employees to read employees.txt and call process_employee.
-7. Use helpers.c/h functions appropriately.
-8. Generate one payslip per employee in correct format.
-9. Print final confirmation message on success.
+1. Implement `open_file()` with error handling.
+2. Implement `generate_output_filename()`.
+3. Read template file correctly.
+4. Replace placeholders properly.
+5. Implement `process_booking()`.
+6. Implement `process_all_bookings()`.
+7. Use helper functions correctly.
+8. Generate one file per booking.
+9. Print success message.
+
+---
 
 ## Help
 
-- Navigate to question in the terminal
-`cd /workspaces/c-programming-lab/Question-4/`
-- compile the code using make
-`make`
-- run the code
-`./payslip`
+Navigate to directory:
+
+```bash
+cd /workspaces/c-programming-lab/Question-4/
+```
+
+Compile:
+
+```bash
+make
+```
+
+Run:
+
+```bash
+./ticket
+```
+
+````

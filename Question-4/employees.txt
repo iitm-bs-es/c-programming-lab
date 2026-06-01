@@ -1,3 +1,0 @@
-101 John Sales 50000
-102 Alice HR 60000
-103 Bob IT 55000

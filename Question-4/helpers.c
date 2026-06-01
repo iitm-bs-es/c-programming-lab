@@ -1,54 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "helpers.h"
 
-void replace_placeholder(const char *template_line, char *output_line,
-                         const char *id, const char *name,
-                         const char *dept, const char *salary)
-{
-    strcpy(output_line, template_line);
-
-    // Replace placeholders
-    char buffer[1024];
-    while (strstr(output_line, "{{id}}"))
-    {
-        snprintf(buffer, sizeof(buffer), "%.*s%s%s",
-                 (int)(strstr(output_line, "{{id}}") - output_line),
-                 output_line, id,
-                 strstr(output_line, "{{id}}") + 6);
-        strcpy(output_line, buffer);
+FILE* open_file(char filename[], char mode[]) {
+    FILE *fp = fopen(filename, mode);
+    if(fp == NULL) {
+        printf("Error opening %s\n", filename);
+        exit(1);
     }
-    while (strstr(output_line, "{{name}}"))
-    {
-        snprintf(buffer, sizeof(buffer), "%.*s%s%s",
-                 (int)(strstr(output_line, "{{name}}") - output_line),
-                 output_line, name,
-                 strstr(output_line, "{{name}}") + 8);
-        strcpy(output_line, buffer);
-    }
-    while (strstr(output_line, "{{dept}}"))
-    {
-        snprintf(buffer, sizeof(buffer), "%.*s%s%s",
-                 (int)(strstr(output_line, "{{dept}}") - output_line),
-                 output_line, dept,
-                 strstr(output_line, "{{dept}}") + 8);
-        strcpy(output_line, buffer);
-    }
-    while (strstr(output_line, "{{salary}}"))
-    {
-        snprintf(buffer, sizeof(buffer), "%.*s%s%s",
-                 (int)(strstr(output_line, "{{salary}}") - output_line),
-                 output_line, salary,
-                 strstr(output_line, "{{salary}}") + 10);
-        strcpy(output_line, buffer);
-    }
+    return fp;
 }
 
-void trim_newline(char *str)
-{
-    size_t len = strlen(str);
-    if (len > 0 && str[len - 1] == '\n')
-    {
-        str[len - 1] = '\0';
-    }
+void generate_output_filename(int id, char filename[]) {
+    sprintf(filename, "ticket_%d.txt", id);
+}
+
+void replace_placeholders(char line[], FILE *out, int id, char name[], char movie[], char seat[], int price) {
+    if(strstr(line, "{{id}}")) fprintf(out, "Booking ID : %d\n", id);
+    else if(strstr(line, "{{name}}")) fprintf(out, "Name       : %s\n", name);
+    else if(strstr(line, "{{movie}}")) fprintf(out, "Movie      : %s\n", movie);
+    else if(strstr(line, "{{seat}}")) fprintf(out, "Seat       : %s\n", seat);
+    else if(strstr(line, "{{price}}")) fprintf(out, "Price      : ₹%d\n", price);
+    else fprintf(out, "%s", line);
 }

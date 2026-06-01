@@ -3,51 +3,60 @@
 #include <string.h>
 #include "helpers.h"
 
-// Function to open a file safely, return the file pointer
-FILE *open_file(const char *filename, const char *mode)
-{
-}
-
-// Function to generate output filename for employee
-void generate_output_filename(char *filename, const char *id)
-{
-}
-
-// Function to process one employee and generate payslip
-void process_employee(const char *id, const char *name, const char *dept, const char *salary)
+// Function to process one booking and generate ticket
+void process_booking(int id, char name[], char movie[], char seat[], int price)
 {
     char filename[100];
-    char template_line[1024], output_line[1024];
+    char template_line[1024];
 
-    // Create output file name like payslip_101.txt using generate_output_filename function
+    FILE *templateFile;
+    FILE *outputFile;
 
-    // Open output file
+    // TODO:
+    // Use generate_output_filename() to create:
+    // ticket_<id>.txt
 
-    // Open template file
+    // TODO:
+    // Open output file in write mode using open_file()
 
-    // Read template line by line and feed it to replace_placeholder function
+    // TODO:
+    // Open template.txt in read mode using open_file()
+
+    // TODO:
+    // Read template line by line using fgets()
+    // For each line call replace_placeholders()
     while (fgets(template_line, sizeof(template_line), templateFile))
     {
+
     }
 
-    // Close open files
+    // TODO:
+    // Close both files
 }
 
-// Function to read employees.txt and process each record
-void process_all_employees()
+// Function to read bookings.txt and process each booking
+void process_all_bookings()
 {
-    // use open_file function to open employees.txt in read mode
-    char id[20], name[50], dept[50], salary[20];
+    int id, price;
+    char name[50], movie[50], seat[20];
 
-    // read id, name, dept, salary line by line and call process_employee function with required arguments
+    FILE *fp;
 
-    // close employees.txt file
+    // TODO:
+    // Open bookings.txt using open_file()
 
+    // TODO:
+    // Read one booking at a time using fscanf()
+    // Format: id name movie seat price
+    // Call process_booking()
+
+    // TODO:
+    // Close file
 }
 
 int main()
 {
-    process_all_employees();
-    printf("Payslips generated successfully!\n");
+    process_all_bookings();
+    printf("Tickets generated successfully.");
     return 0;
 }
