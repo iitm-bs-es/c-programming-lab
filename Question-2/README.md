@@ -416,15 +416,11 @@ output.txt
 
 ## Evaluation Rubric
 
-| Component | Marks |
-|---|---:|
-| File Input Handling | 20 |
-| Correct Row/Column Dominance Logic | 40 |
-| Matrix Traversal | 15 |
-| Boundary / Edge Case Handling | 15 |
-| Output Formatting | 5 |
-| Code Quality | 5 |
-| **Total** | **100** |
+1. File Input Handling
+2. Correct Dominant Cell Logic
+3. Boundary Handling
+4. Output Formatting
+5. Code Quality
 
 ---
 
