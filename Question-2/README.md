@@ -63,7 +63,7 @@ Consider:
 
 ```text
 3 3
-4 2 7
+4 2 1
 3 9 5
 8 1 6
 ```
@@ -147,7 +147,7 @@ Matrix values are integers from `0` to `99`.
 
 ```text
 3 3
-4 2 7
+4 2 1
 3 9 5
 8 1 6
 ```
@@ -324,7 +324,7 @@ Dominant cells:
 
 ```text
 2 3
-9 9 1
+9 9 5
 2 3 4
 ```
 
